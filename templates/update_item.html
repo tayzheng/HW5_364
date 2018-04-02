@@ -1,1 +1,9 @@
+{% block content %}
 
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.update_priority.label }} {{ form.update_priority() }}<br>
+    {{ form.submit() }}<br>
+</form>
+
+{% endblock %}
