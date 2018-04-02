@@ -60,18 +60,23 @@ class TodoItem(db.Model):
 # Provided - Form to create a todo list
 class TodoListForm(FlaskForm):
     name = StringField("What is the title of this TODO List?", validators=[Required()])
-    items = TextAreaField("Enter your TODO list items in the following format: Description, Priority -- separated by newlines")
+    items = TextAreaField("Enter your TODO list items in the following format: Description (no commas allowed), Priority.")
     submit = SubmitField("Submit")
 
 # TODO 364: Define an UpdateButtonForm class for use to update todo items
-
+class UpdateButtonForm(FlaskForm):
+    submit = SubmitField("Update")
 
 
 # TODO 364: Define a form class for updating the priority of a todolist item
 #(HINT: What class activity you have done before is this similar to?)
-
+class UpdatePriorityForm(FlaskForm):
+    update_priority = StringField("What would you like to update the priority of this item to?", validators = [Required()])
+    submit = SubmitField("Update")
 
 # TODO 364: Define a DeleteButtonForm class for use to delete todo items
+class DeleteButtonForm(FlaskForm):
+    submit = SubmitField("Delete")
 
 
 
